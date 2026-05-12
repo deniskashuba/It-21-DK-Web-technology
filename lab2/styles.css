@@ -1,0 +1,46 @@
+body {
+    font-family: Arial;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: lightgray;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}

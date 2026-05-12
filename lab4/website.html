@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №4</title>
+</head>
+<body>
+
+<script>
+
+let name = prompt("Введіть ваше ім'я:");
+alert("Привіт, " + name + "! Радий тебе бачити!");
+console.log("Привіт, " + name + "!");
+
+let num1 = parseFloat(prompt("Введіть перше число:"));
+let num2 = parseFloat(prompt("Введіть друге число:"));
+
+let multiplication = num1 * num2;
+let division = num1 / num2;
+
+alert("Добуток: " + multiplication + "\nЧастка: " + division);
+console.log("Добуток:", multiplication);
+console.log("Частка:", division);
+
+let birthYear = parseInt(prompt("Введіть рік народження:"));
+let currentYear = 2025;
+let userAge = currentYear - birthYear;
+const myAge = 18;
+
+let difference = Math.abs(userAge - myAge);
+
+if (userAge > myAge) {
+    alert("Ваш вік: " + userAge + ". Ви старші на " + difference + " років.");
+} else if (userAge < myAge) {
+    alert("Ваш вік: " + userAge + ". Ви молодші на " + difference + " років.");
+} else {
+    alert("Ваш вік: " + userAge + ". Ми одного віку!");
+}
+
+console.log("Вік користувача:", userAge);
+
+</script>
+
+</body>
+</html>

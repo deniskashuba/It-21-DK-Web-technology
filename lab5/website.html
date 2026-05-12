@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №5</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        header, footer {
+            background-color: lightgray;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hover-box {
+            padding: 10px;
+            background-color: lightblue;
+            width: 200px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Лабораторна №5</h1>
+</header>
+
+<main>
+
+    <p id="text">Це початковий текст</p>
+
+    <button id="changeTextBtn">Змінити текст</button>
+
+    <div class="hover-box" id="box">Наведи на мене</div>
+
+    <button id="addBtn">Додати елемент</button>
+    <button id="removeBtn">Видалити елемент</button>
+
+    <ul id="list"></ul>
+
+    <button id="counterBtn">Натисніть 5 разів!</button>
+
+</main>
+
+<footer>
+</footer>
+
+<script>
+
+let text = document.getElementById("text");
+let changeBtn = document.getElementById("changeTextBtn");
+
+changeBtn.addEventListener("click", function() {
+    text.textContent = "Текст змінено!";
+});
+
+let box = document.getElementById("box");
+
+box.addEventListener("mouseover", function() {
+    box.style.backgroundColor = "yellow";
+});
+
+box.addEventListener("mouseout", function() {
+    box.style.backgroundColor = "lightblue";
+});
+
+let addBtn = document.getElementById("addBtn");
+let list = document.getElementById("list");
+
+addBtn.addEventListener("click", function() {
+    let li = document.createElement("li");
+    li.textContent = "Новий елемент";
+    list.appendChild(li);
+});
+
+let removeBtn = document.getElementById("removeBtn");
+
+removeBtn.addEventListener("click", function() {
+    if (list.lastChild) {
+        list.lastChild.remove();
+    }
+});
+
+let counterBtn = document.getElementById("counterBtn");
+let count = 0;
+
+counterBtn.addEventListener("click", function() {
+    count++;
+
+    if (count === 5 ) {
+        alert("Denis, варіант номер 5!");
+        count = 0;
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+}
+
+/* 1. КНОПКА */
+.button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    background-color: red;
+}
+
+.button:active {
+    transform: scale(1.2);
+}
+
+/* 2. РОЗГОРТАННЯ */
+.content {
+    max-height: 20px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: lightgray;
+    margin-top: 10px;
+}
+
+.content:hover {
+    max-height: 100px;
+}
+
+/* 3. РУХ БЛОКУ */
+@keyframes moveBox {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(200px); }
+    100% { transform: translateX(0); }
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background: green;
+    animation: moveBox 2s infinite;
+    margin-top: 20px;
+}
+
+/* 4. КОЛО */
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: purple;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* ВАРІАНТ 13 → непарний → @keyframes */
+@keyframes moveCircle {
+    0% { left: 0; }
+    50% { left: 200px; }
+    100% { left: 0; }
+}
+
+.animate {
+    animation: moveCircle 2.6s infinite;
+}

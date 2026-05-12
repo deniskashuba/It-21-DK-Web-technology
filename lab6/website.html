@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №6</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+        }
+
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Реєстрація</h2>
+
+<form id="form">
+
+    <input type="text" id="name" placeholder="Ім'я" required>
+
+    <input type="email" id="email" placeholder="Email" required>
+
+    <input type="password" id="password" placeholder="Пароль (мін 6 символів)" required>
+
+    <input type="password" id="confirmPassword" placeholder="Підтвердіть пароль" required>
+
+    <input type="number" id="age" placeholder="Вік" required>
+
+    <!-- ВАРІАНТ 13 (непарний) -->
+    <select id="group" required>
+        <option value="">Оберіть групу</option>
+        <option>ІТ-101</option>
+        <option>ІТ-102</option>
+        <option>ІТ-103</option>
+        <option>ІТ-104</option>
+    </select>
+
+    <button type="submit">Зареєструватися</button>
+
+</form>
+
+<script>
+
+document.getElementById("form").addEventListener("submit", function(event) {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let age = document.getElementById("age").value;
+    let group = document.getElementById("group").value;
+
+    // Перевірка імені
+    if (name === "") {
+        alert("Введіть ім'я");
+        event.preventDefault();
+        return;
+    }
+
+    // Перевірка email
+    if (!email.includes("@")) {
+        alert("Невірний email");
+        event.preventDefault();
+        return;
+    }
+
+    // Пароль
+    if (password.length < 6) {
+        alert("Пароль має бути мінімум 6 символів");
+        event.preventDefault();
+        return;
+    }
+
+    // Підтвердження пароля
+    if (password !== confirmPassword) {
+        alert("Паролі не співпадають");
+        event.preventDefault();
+        return;
+    }
+
+    // Вік
+    if (age < 10) {
+        alert("Вік має бути 10+");
+        event.preventDefault();
+        return;
+    }
+
+    // Група
+    if (group === "") {
+        alert("Оберіть групу");
+        event.preventDefault();
+        return;
+    }
+
+    alert("Реєстрація успішна!");
+
+});
+
+</script>
+
+</body>
+</html>
